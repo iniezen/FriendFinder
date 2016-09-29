@@ -153,13 +153,12 @@
 		<br>
 
 		<!-- Submit Button -->
-		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
- Submit</button>
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
 
 		<hr>
 	    <footer class="footer">
 	      <div class="container">
-		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/iniezen/FriendFinder">GitHub Repo</a></p>
 	      </div>
 	    </footer>
 
@@ -231,13 +230,6 @@
 	    	}
 	    	console.log(userData);
 
-	    	// var bestmatch = function(){
-	    	// 	for (var i=0; i<friendData.length; i++){
-	    			
-	    			
-	    	// 	}
-
-	    	// }
 
 
 	    	// Grab the URL of the website
@@ -248,7 +240,9 @@
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		$("#matchName").text(data.name);
+	    		console.log(data.name);
 	    		$('#matchImg').attr("src", data.photo);
+	    		console.log(data.photo);
 
 		    	// Show the modal with the best match 
 		    	$("#resultsModal").modal('toggle');

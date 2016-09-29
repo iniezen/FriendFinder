@@ -40,6 +40,8 @@ module.exports = function (app) {
 	
 			var newFriend = req.body;
 			var differenceArray= [];
+			var bestFriend;
+			var tempMatch = 100;
 
 			
 			var newFriendScores= newFriend.scores;
@@ -57,22 +59,34 @@ module.exports = function (app) {
 						var difference=Math.abs(newFriendScores[x] - oldFriendScores[x]);
 						
 						totalDifference = totalDifference+difference;
-						console.log("difference "+difference);
+						// console.log("difference "+difference);
 
 						
 						
 				}
 
 				console.log("totalDifference "+totalDifference);
-				
+									//if the difference is less than any of the previous comparisons, push the current profile to the best match position
+					if(totalDifference < tempMatch){
+						bestFriend = friendData[i];
+						tempMatch = totalDifference;
+						differenceArray = [];
+						console.log(tempMatch);
+
+
+					}
+					//or just move on
+					else{
+						differenceArray =[];
+					}
+					
 			}
+			// this is correctly pulling the match
+			console.log(bestFriend);
 	
-			friendData.push(newFriend);
-		
-		// else { // Or false if they don't have a table
-		// 	waitListData.push(req.body);
-		// 	res.json(false); // KEY LINE
-		// }
+			// friendData.push(newFriend);
+
+
 	});
 
 	// ---------------------------------------------------------------------------
