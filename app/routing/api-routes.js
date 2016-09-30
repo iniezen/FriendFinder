@@ -5,6 +5,7 @@
 // ===============================================================================
 
 var friendData 		= require('../data/friends.js');
+var path = require('path');
 
 
 
@@ -83,8 +84,9 @@ module.exports = function (app) {
 			}
 			// this is correctly pulling the match
 			console.log(bestFriend);
+			res.send(bestFriend);
 	
-			// friendData.push(newFriend);
+			friendData.push(newFriend);
 
 
 	});
